@@ -259,6 +259,8 @@ function loadDoc() {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "ajax_info.txt", true);
+  var name = "check"
+  var source = "ajax_info" + name + ".txt"
+  xhttp.open("GET", name, true);
   xhttp.send();
 }
