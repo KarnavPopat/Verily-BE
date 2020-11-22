@@ -252,11 +252,6 @@ function getCookie(name) {
     }
 }
 
-var firstName = ""
-function ajaxname() {
-	firstName = document.getElementById("ajaxnamer");
-}
-
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
