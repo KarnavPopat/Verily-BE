@@ -259,8 +259,7 @@ function loadDoc() {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  var name = "check"
-  var source = "ajax_info" + firstName + ".txt"
+  var source = "ajax_info.txt"
   xhttp.open("GET", source, true);
   xhttp.send();
 }
