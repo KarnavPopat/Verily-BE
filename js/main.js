@@ -1,7 +1,3 @@
-AOS.init({
-	duration: 800,
-	easing: "slide"
-});
 
 (function($) {
 
@@ -9,12 +5,12 @@ AOS.init({
 
 	$(window).stellar ({
 		horizontalScrolling: false,
-    	/*responsive: true,*/
-    	parallaxBackgrounds: true,
-    	parallaxElements: true,
-    	hideDistantElements: false,
-    	scrollProperty: 'scroll'
-    });
+		/*responsive: true,*/
+		parallaxBackgrounds: true,
+		parallaxElements: true,
+		hideDistantElements: false,
+		scrollProperty: 'scroll'
+	});
 
 	var fullHeight = function() {
 		$('.js-fullheight').css('height', $(window).height());
@@ -35,10 +31,10 @@ AOS.init({
 	loader();
 
 	// Scrollax
-   $.Scrollax();
+	 $.Scrollax();
 
-   // Open the menu on click
-   var burgerMenu = function() {
+	 // Open the menu on click
+	 var burgerMenu = function() {
 
 		$('.js-site-nav-toggle').on('click', function(event) {
 			event.preventDefault();
@@ -59,48 +55,30 @@ AOS.init({
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#site-aside, .js-site-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+		var container = $("#site-aside, .js-site-nav-toggle");
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
 
-	    	if ( $('body').hasClass('offcanvas') ) {
+			if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas');
-    			$('.js-site-nav-toggle').removeClass('active');
+				$('body').removeClass('offcanvas');
+				$('.js-site-nav-toggle').removeClass('active');
 			
-	    	}
-	    	
-	    }
+			}
+			
+		}
 		});
 
 		$(window).scroll(function(){
 			if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas');
-    			$('.js-site-nav-toggle').removeClass('active');
+				$('body').removeClass('offcanvas');
+				$('.js-site-nav-toggle').removeClass('active');
 			
-	    	}
+			}
 		});
 
 	};
 	mobileMenuOutsideClick();
-
-	// dropdown menu in the side navbar
-	var dropDown = function () {
-
-		$('.dropbtn').on('click', function(event) {
-			event.preventDefault();
-			var $this = $(this);
-
-			if ($('.dropdown-content').hasClass('show')) {
-				$this.removeClass('show');
-				$('.dropdown-content').removeClass('show');	
-			} else {
-				$this.addClass('show');
-				$('.dropdown-content').addClass('show');	
-			}
-		});
-	}
-	dropDown();
 
 	// fade in/out animation
 	/* var contentWayPoint = function() {
@@ -128,7 +106,7 @@ AOS.init({
 								el.addClass('fadeInUp ftco-animated');
 							}
 							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
+						},	k * 50, 'easeInOutExpo' );
 					});
 					
 				}, 100);
@@ -139,67 +117,33 @@ AOS.init({
 	};
 	contentWayPoint(); */
 
-	/* artefact for magnific popup
-	$('.image-popup').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
-    }
-  }); */
+	function checkCookies() {
+	return navigator.cookieEnabled;
+	};
 
-  /* artefact for video player
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-
-    fixedContentPos: false
-  }); */
-
-
-  	// load the sidebar
-  	$(function() {
-      	$("#sidebar").load("js/fxdxdy1.html"); 
-    });
-
-  	// load three random popular articles
-  	$(function() {
-      	$("#popart").load("js/fxdxdy3.html");
-      	var elems = $(".randomize");
-		if (elems.length) {
-  			var keep1 = Math.floor(Math.random() * elems.length);
-  			var keep2 = Math.floor(Math.random() * elems.length);
-  			var keep3 = Math.floor(Math.random() * elems.length);
-  			for (var i = 0; i < elems.length; ++i) {
-    			if (i !== keep1 && i !== keep2 && i !== keep3) {
-      				$(elems[i]).hide();
- 		   		}
-  			}
-		}
-    });
-
-  // load the footer
-  $(function() {
-      	$("#footer").load("js/fxdxdy2.html"); 
-    });
+	function cookieCheck() {
+	if (checkCookies()) {
+		document.cookie = "user=John;";
+		console.log(document.cookie);
+	}
+	};
+	cookieCheck();
 
 
 })(jQuery);
+
+// load the sidebar
+$(function() {
+	$("#sidebar").load("js/fxdxdy1.html"); 
+});
+// load three popular articles
+$(function() {
+	$("#popart").load("js/fxdxdy3.html");
+});
+// load the footer
+$(function() {
+	$("#footer").load("js/fxdxdy2.html"); 
+});
 
 // search for an article
 function search_article() { 
@@ -224,42 +168,3 @@ function search_article() {
 		y.style.display="inline-block !important";
 	}
 } 
-
-// sleep for a set amount of milliseconds
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-// popup page before user leaves
-/*window.onbeforeunload = function(){
-  return 'Are you sure you want to leave? This is a test message.';
-};*/
-
-function setCookie(name) {
-	document.cookie = "check = " + name + "; path = /";
-	console.log(document.cookie);
-}
-
-function getCookie(name) {
-	var cookie = document.cookie.split(';');
-
-    for(var i = 0; i < cookie.length; i++) {
-        var cookiePair = cookie[i].split("=");
-
-        if(name == cookiePair[0].trim()) {
-            return cookiePair[1];
-        }
-    }
-}
-
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  var source = "ajax_info.txt"
-  xhttp.open("GET", source, true);
-  xhttp.send();
-}
