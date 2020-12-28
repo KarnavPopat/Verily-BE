@@ -21,14 +21,24 @@
 	fullHeight();
 
 	// loader
-	var loader = function() {
+	/*var loader = function() {
 		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
-			}
+			$('#ftco-loader').removeClass('show');
 		}, 1);
 	};
-	loader();
+	loader();*//*
+
+	let loader = function() {
+		setTimeout(function() {
+			document.getElementById('ftco-loader').removeClass('show');
+		});
+	};
+	loader();*/
+
+	const loader = function() {
+		document.querySelector('#ftco-loader').classList.remove('show');
+	};
+	setTimeout(loader, 200);
 
 	// Scrollax
 	 $.Scrollax();
@@ -117,17 +127,17 @@
 	};
 	contentWayPoint(); */
 
-	function checkCookies() {
-	return navigator.cookieEnabled;
-	};
+function checkCookies() {
+return navigator.cookieEnabled;
+};
 
-	function cookieCheck() {
-	if (checkCookies()) {
-		document.cookie = "user=John;";
-		console.log(document.cookie);
-	}
-	};
-	cookieCheck();
+function cookieCheck() {
+if (checkCookies()) {
+	document.cookie = "user=John;";
+	console.log(document.cookie);
+}
+};
+cookieCheck();
 
 
 })(jQuery);
@@ -147,24 +157,18 @@ $(function() {
 
 // search for an article
 function search_article() { 
-	let input = document.getElementById('searchbar').value 
-	input=input.toLowerCase(); 
-	let x = document.getElementsByClassName('searchable'); 
+	let input = document.getElementById('searchbar').value.toLowerCase()
+	let articles = document.getElementsByClassName('searchable');
 	
-	for (i = 0; i < x.length; i++) { 
-		if (!x[i].innerHTML.toLowerCase().includes(input)) { 
-			x[i].style.display="none"; 
+	for (i = 0; i < articles.length; i++) { 
+		if (!articles[i].innerHTML.toLowerCase().includes(input)) { 
+			articles[i].style.display="none"; 
 		} 
 		else { 
-			x[i].style.display="inline-block";				 
+			articles[i].style.display="inline-block";				 
 		}
 		if (input == "") {
-			x[i].style.display="none";
+			articles[i].style.display="inline-block";
 		}
-	}
-
-	let y = document.getElementsByClassName('search-head');
-	for (i = 0; i < y.length; i++) {
-		y.style.display="inline-block !important";
 	}
 } 
