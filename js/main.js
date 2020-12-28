@@ -23,8 +23,13 @@ let burgerMenu = function() {
 };
 burgerMenu();
 
+(function($) {
+
+	"use strict";
+
 // Click outside of offcanvas
 let handleOutsideClick = function() {
+	console.log("outside click triggered");
 
 	document.addEventListener('click', function(event) {
 		let container = document.querySelector('#site-aside, .js-site-nav-toggle');
@@ -44,10 +49,6 @@ let handleOutsideClick = function() {
 	});
 };
 handleOutsideClick();
-
-(function($) {
-
-	"use strict";
 
 	$(window).stellar ({
 		horizontalScrolling: false,
