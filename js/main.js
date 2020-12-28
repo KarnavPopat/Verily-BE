@@ -1,4 +1,50 @@
 
+const loader = function() {
+	setTimeout(function() {
+		document.querySelector('#ftco-loader').classList.remove('show');
+	});
+};
+loader();
+
+// Open the menu on click
+let burgerMenu = function() {
+	document.querySelector('.js-site-nav-toggle').addEventListener('click', function(event) {
+		event.preventDefault();
+
+		if (document.querySelector('body').classList.contains('offcanvas')) {
+			document.querySelector('.js-site-nav-toggle').classList.remove('active');
+			document.querySelector('body').classList.remove('offcanvas');
+		}
+		else {
+			document.querySelector('.js-site-nav-toggle').classList.add('active');
+			document.querySelector('body').classList.add('offcanvas');
+		}
+	});	
+};
+burgerMenu();
+
+// Click outside of offcanvas
+let handleOutsideClick = function() {
+
+	document.addEventListener('click', function(event) {
+		let container = document.querySelector('#site-aside, .js-site-nav-toggle');
+		if (!((container === event.target) && (container.has(event.target).length === 0))) {
+			if (document.querySelector('body').classList.contains('offcanvas')) {
+				document.querySelector('body').classList.remove('offcanvas');
+				document.querySelector('.js-site-nav-toggle').classList.remove('active');
+			}
+		}
+	});
+
+	window.addEventListener('scroll', function() {
+		if (document.querySelector('body').classList.contains('offcanvas')) {
+			document.querySelector('body').classList.remove('offcanvas');
+			document.querySelector('.js-site-nav-toggle').classList.remove('active');
+		}
+	});
+};
+handleOutsideClick();
+
 (function($) {
 
 	"use strict";
@@ -12,83 +58,8 @@
 		scrollProperty: 'scroll'
 	});
 
-	var fullHeight = function() {
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function() {
-			$('.js-fullheight').css('height', $(window).height());
-		});
-	};
-	fullHeight();
-
-	// loader
-	/*var loader = function() {
-		setTimeout(function() { 
-			$('#ftco-loader').removeClass('show');
-		}, 1);
-	};
-	loader();*//*
-
-	let loader = function() {
-		setTimeout(function() {
-			document.getElementById('ftco-loader').removeClass('show');
-		});
-	};
-	loader();*/
-
-	const loader = function() {
-		document.querySelector('#ftco-loader').classList.remove('show');
-	};
-	setTimeout(loader, 200);
-
 	// Scrollax
 	 $.Scrollax();
-
-	 // Open the menu on click
-	 var burgerMenu = function() {
-
-		$('.js-site-nav-toggle').on('click', function(event) {
-			event.preventDefault();
-			var $this = $(this);
-
-			if ($('body').hasClass('offcanvas')) {
-				$this.removeClass('active');
-				$('body').removeClass('offcanvas');	
-			} else {
-				$this.addClass('active');
-				$('body').addClass('offcanvas');	
-			}
-		});
-	};
-	burgerMenu();
-
-	// Click outside of offcanvas
-	var mobileMenuOutsideClick = function() {
-
-		$(document).click(function (e) {
-		var container = $("#site-aside, .js-site-nav-toggle");
-		if (!container.is(e.target) && container.has(e.target).length === 0) {
-
-			if ( $('body').hasClass('offcanvas') ) {
-
-				$('body').removeClass('offcanvas');
-				$('.js-site-nav-toggle').removeClass('active');
-			
-			}
-			
-		}
-		});
-
-		$(window).scroll(function(){
-			if ( $('body').hasClass('offcanvas') ) {
-
-				$('body').removeClass('offcanvas');
-				$('.js-site-nav-toggle').removeClass('active');
-			
-			}
-		});
-
-	};
-	mobileMenuOutsideClick();
 
 	// fade in/out animation
 	/* var contentWayPoint = function() {
@@ -126,19 +97,6 @@
 		} , { offset: '95%' } );
 	};
 	contentWayPoint(); */
-
-function checkCookies() {
-return navigator.cookieEnabled;
-};
-
-function cookieCheck() {
-if (checkCookies()) {
-	document.cookie = "user=John;";
-	console.log(document.cookie);
-}
-};
-cookieCheck();
-
 
 })(jQuery);
 
