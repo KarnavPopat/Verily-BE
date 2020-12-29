@@ -86,19 +86,4 @@ function search_article() {
 	mobileMenuOutsideClick();
 	// ______________________________
 
-	// load the sidebar
-	// ______________________________
-	$(function() {
-		$("#sidebar").load("js/fxdxdy1.html"); 
-	});
-	// load three popular articles
-	$(function() {
-		$("#popart").load("js/fxdxdy3.html");
-	});
-	// load the footer
-	$(function() {
-		$("#footer").load("js/fxdxdy2.html"); 
-	});
-	// ______________________________
-
 })(jQuery);
