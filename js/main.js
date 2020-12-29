@@ -1,12 +1,19 @@
 
+"use strict";
+
+// Remove the loading page
+// ______________________________
 const loader = function() {
 	setTimeout(function() {
 		document.querySelector('#ftco-loader').classList.remove('show');
 	});
 };
 loader();
+// ______________________________
+
 
 // Open the menu on click
+// ______________________________
 let burgerMenu = function() {
 	document.querySelector('.js-site-nav-toggle').addEventListener('click', function(event) {
 		event.preventDefault();
@@ -22,86 +29,11 @@ let burgerMenu = function() {
 	});	
 };
 burgerMenu();
+// ______________________________
 
-(function($) {
-
-	"use strict";
-
-// Click outside of offcanvas
-let handleOutsideClick = function() {
-	console.log("outside click triggered");
-
-	document.addEventListener('click', function(event) {
-		let container = document.querySelector('#site-aside, .js-site-nav-toggle');
-		if (!((container === event.target) && (container.has(event.target).length === 0))) {
-			if (document.querySelector('body').classList.contains('offcanvas')) {
-				document.querySelector('body').classList.remove('offcanvas');
-				document.querySelector('.js-site-nav-toggle').classList.remove('active');
-			}
-		}
-	});
-
-	window.addEventListener('scroll', function() {
-		if (document.querySelector('body').classList.contains('offcanvas')) {
-			document.querySelector('body').classList.remove('offcanvas');
-			document.querySelector('.js-site-nav-toggle').classList.remove('active');
-		}
-	});
-};
-handleOutsideClick();
-
-	$(window).stellar ({
-		horizontalScrolling: false,
-		/*responsive: true,*/
-		parallaxBackgrounds: true,
-		parallaxElements: true,
-		hideDistantElements: false,
-		scrollProperty: 'scroll'
-	});
-
-	// Scrollax
-	 $.Scrollax();
-
-	// fade in/out animation
-	/* var contentWayPoint = function() {
-		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
-				i++;
-
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .ftco-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
-							} else {
-								el.addClass('fadeInUp ftco-animated');
-							}
-							el.removeClass('item-animate');
-						},	k * 50, 'easeInOutExpo' );
-					});
-					
-				}, 100);
-				
-			}
-
-		} , { offset: '95%' } );
-	};
-	contentWayPoint(); */
-
-})(jQuery);
 
 // load the sidebar
+// ______________________________
 $(function() {
 	$("#sidebar").load("js/fxdxdy1.html"); 
 });
@@ -113,10 +45,13 @@ $(function() {
 $(function() {
 	$("#footer").load("js/fxdxdy2.html"); 
 });
+// ______________________________
+
 
 // search for an article
+// ______________________________
 function search_article() { 
-	let input = document.getElementById('searchbar').value.toLowerCase()
+	let input = document.getElementById('searchbar').value.toLowerCase();
 	let articles = document.getElementsByClassName('searchable');
 	
 	for (i = 0; i < articles.length; i++) { 
@@ -130,4 +65,37 @@ function search_article() {
 			articles[i].style.display="inline-block";
 		}
 	}
-} 
+}
+// ______________________________
+
+(function($) {
+
+	var mobileMenuOutsideClick = function() {
+
+		$(document).click(function (e) {
+		var container = $("#site-aside, .js-site-nav-toggle");
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+
+			if ( $('body').hasClass('offcanvas') ) {
+
+				$('body').removeClass('offcanvas');
+				$('.js-site-nav-toggle').removeClass('active');
+			
+			}
+			
+		}
+		});
+
+		$(window).scroll(function(){
+			if ( $('body').hasClass('offcanvas') ) {
+
+				$('body').removeClass('offcanvas');
+				$('.js-site-nav-toggle').removeClass('active');
+			
+			}
+		});
+
+	};
+	mobileMenuOutsideClick();
+
+})(jQuery);
