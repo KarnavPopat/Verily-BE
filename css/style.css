@@ -64,7 +64,6 @@ html {
 .btn {
 	cursor: pointer;
 	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
 	-ms-border-radius: 30px;
 	border-radius: 30px;
 	-webkit-box-shadow: none;
@@ -407,7 +406,6 @@ h1, h2, h3, h4, h5,
 	height: 2.2px;
 	background: #bf9b30;
 	color: #bf9b30;
-	font: bold 14px 0.4 Helvetica;
 	text-transform: uppercase;
 
 	-webkit-transition: all 0.2s ease-out;
@@ -650,7 +648,6 @@ h1, h2, h3, h4, h5,
 	padding: 4px;
 	font-size: 18px;
 	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 	background: #bf9b30;
@@ -713,7 +710,6 @@ h1, h2, h3, h4, h5,
 	position: relative;
 	margin-bottom: 0;
 	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	-ms-border-radius: 0;
 	border-radius: 0;
 }
@@ -724,7 +720,6 @@ h1, h2, h3, h4, h5,
 	color: rgba(255, 255, 255, 0.7);
 	font-size: 16px;
 	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	-ms-border-radius: 0;
 	border-radius: 0;
 }
@@ -755,7 +750,6 @@ h1, h2, h3, h4, h5,
 	font-size: 16px;
 	background: #fff;
 	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	-ms-border-radius: 0;
 	border-radius: 0; 
 }
@@ -1165,7 +1159,6 @@ h1, h2, h3, h4, h5,
 	height: auto;
 	width: 100%;
 	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 }
