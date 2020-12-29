@@ -5,7 +5,7 @@
 // ______________________________
 const loader = function() {
 	setTimeout(function() {
-		document.querySelector('#ftco-loader').classList.remove('show');
+		document.getElementById('ftco-loader').classList.remove('show');
 	});
 };
 loader();
@@ -32,32 +32,6 @@ burgerMenu();
 // ______________________________
 
 
-// load the sidebar
-// ______________________________
-
-function load(url, element)
-{
-    fetch(url).then(res => {
-        element.innerHTML = res; 
-    });
-}
-
-load('js/fxdxdy1.html', document.querySelector('#sidebar'));
-
-$(function() {
-	$("#sidebar").load("js/fxdxdy1.html"); 
-});
-// load three popular articles
-$(function() {
-	$("#popart").load("js/fxdxdy3.html");
-});
-// load the footer
-$(function() {
-	$("#footer").load("js/fxdxdy2.html"); 
-});
-// ______________________________
-
-
 // search for an article
 // ______________________________
 function search_article() { 
@@ -78,8 +52,11 @@ function search_article() {
 }
 // ______________________________
 
+
 (function($) {
 
+	// handle click outside loaded sidebar
+	// ______________________________
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
@@ -107,5 +84,21 @@ function search_article() {
 
 	};
 	mobileMenuOutsideClick();
+	// ______________________________
+
+	// load the sidebar
+	// ______________________________
+	$(function() {
+		$("#sidebar").load("js/fxdxdy1.html"); 
+	});
+	// load three popular articles
+	$(function() {
+		$("#popart").load("js/fxdxdy3.html");
+	});
+	// load the footer
+	$(function() {
+		$("#footer").load("js/fxdxdy2.html"); 
+	});
+	// ______________________________
 
 })(jQuery);
