@@ -827,7 +827,8 @@ h1, h2, h3, h4, h5,
 
 .site-blocks-cover {
 	background-size: cover;
-	background-image: url("../images/bg1.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
 	color: rgba(0, 0, 0, 0.8); 
 }
 .site-blocks-cover:before {
