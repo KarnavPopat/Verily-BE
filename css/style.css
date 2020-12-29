@@ -263,8 +263,8 @@ h1, h2, h3, h4, h5,
 	left: 50%;
 	top: 50%;
 	background-color: rgba(255, 255, 255, 0.9);
-	-webkit-box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
-	box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
+	-webkit-box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
 	border-radius: 16px;
 	opacity: 0;
 	visibility: hidden;
@@ -468,10 +468,8 @@ h1, h2, h3, h4, h5,
 -------------------------------------------------------------------------*/
 
 #site-aside {
-	padding-top: 3em;
+	padding: 3em;
 	padding-bottom: 40px;
-	padding-left: 3em;
-	padding-right: 3em;
 	width: 20%;
 	position: fixed;
 
@@ -1289,8 +1287,8 @@ h1, h2, h3, h4, h5,
 }
 
 .writer-info {
-	padding-top: 40px;
 	padding: 20px;
+	padding-top: 40px;
 }
 
 @media (max-width: 768px) {

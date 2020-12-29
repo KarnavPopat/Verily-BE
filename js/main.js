@@ -38,7 +38,7 @@ function search_article() {
 	let input = document.getElementById('searchbar').value.toLowerCase();
 	let articles = document.getElementsByClassName('searchable');
 	
-	for (i = 0; i < articles.length; i++) { 
+	for (let i = 0; i < articles.length; i++) {
 		if (!articles[i].innerHTML.toLowerCase().includes(input)) { 
 			articles[i].style.display="none"; 
 		} 
@@ -57,10 +57,10 @@ function search_article() {
 
 	// handle click outside loaded sidebar
 	// ______________________________
-	var mobileMenuOutsideClick = function() {
+	let mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-		var container = $("#site-aside, .js-site-nav-toggle");
+		let container = $("#site-aside, .js-site-nav-toggle");
 		if (!container.is(e.target) && container.has(e.target).length === 0) {
 
 			if ( $('body').hasClass('offcanvas') ) {
