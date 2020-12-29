@@ -34,6 +34,16 @@ burgerMenu();
 
 // load the sidebar
 // ______________________________
+
+function load(url, element)
+{
+    fetch(url).then(res => {
+        element.innerHTML = res; 
+    });
+}
+
+load('js/fxdxdy1.html', document.querySelector('#sidebar'));
+
 $(function() {
 	$("#sidebar").load("js/fxdxdy1.html"); 
 });
