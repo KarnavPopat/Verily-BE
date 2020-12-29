@@ -49,25 +49,6 @@ html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
-html {
-  scroll-behavior: smooth;
-}
-::-webkit-scrollbar {
-  width: 15px;
-  background-color: black;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #bf9b30;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-::-webkit-scrollbar-track {
-  background-color: black;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-::selection {
-  background: transparent;
-  color: #bf9b30;
-}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -100,12 +81,15 @@ html {
     opacity: 1;
   }
 }
-@-o-keyframes fadein;
-
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: black;
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
 body {
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
