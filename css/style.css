@@ -828,6 +828,9 @@ h1, h2, h3, h4, h5,
 	font-family: "Montserrat", Arial, sans-serif;
 	font-size: 20px;
 }
+.site-footer .footer-links {
+	text-align: center;
+}
 .site-footer a {
 	color: rgba(255, 255, 255, 0.3);
 }
