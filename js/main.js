@@ -1,34 +1,77 @@
 
 "use strict";
 
-// Remove the loading page
-// ______________________________
-const loader = function() {
-	setTimeout(function() {
-		document.getElementById('ftco-loader').classList.remove('show');
-	});
-};
-loader();
-// ______________________________
-
-
-// Open the menu on click
+// Handle click on the sidebar toggle
 // ______________________________
 let burgerMenu = function() {
-	document.querySelector('.js-site-nav-toggle').addEventListener('click', function(event) {
+	document.querySelector('.site-nav-toggle').addEventListener('click', function(event) {
 		event.preventDefault();
 
 		if (document.querySelector('body').classList.contains('offcanvas')) {
-			document.querySelector('.js-site-nav-toggle').classList.remove('active');
+			document.querySelector('.site-nav-toggle').classList.remove('active');
 			document.querySelector('body').classList.remove('offcanvas');
 		}
 		else {
-			document.querySelector('.js-site-nav-toggle').classList.add('active');
+			document.querySelector('.site-nav-toggle').classList.add('active');
 			document.querySelector('body').classList.add('offcanvas');
 		}
 	});	
 };
 burgerMenu();
+
+// ______________________________
+
+// handle click outside loaded sidebar
+// ______________________________
+let targetCheck = true;
+let test = function() {
+
+	document.addEventListener('click', function(event) {
+		let container = document.querySelectorAll(".site-nav-toggle, #site-aside");
+		targetCheck = true;
+		containsElement(container[1]);
+		if((container[0] !== (event.target) && container[1] !== (event.target)) && (targetCheck)) {
+			if(document.querySelector('body').classList.contains('offcanvas')) {
+				document.querySelector('body').classList.remove('offcanvas')
+				document.querySelector('.site-nav-toggle').classList.remove('active')
+			}
+		}
+	});
+
+	document.addEventListener('scroll', function() {
+		if(document.querySelector('body').classList.contains('offcanvas')) {
+			document.querySelector('body').classList.remove('offcanvas')
+			document.querySelector('.site-nav-toggle').classList.remove('active')
+		}
+	});
+};
+test();
+
+let containsElement = function(element) {
+	if(element === event.target) {
+		targetCheck = false;
+	}
+	else {
+		if(element.children.length !== 0) {
+			for(let i = 0; i < element.children.length; i++) {
+				containsElement(element.children[i]);
+			}
+		}
+	}
+}
+// ______________________________
+
+
+// Remove the loading page on page load
+// ______________________________
+const loader = function() {
+	setTimeout(function() {
+		if(document.querySelectorAll('#ftco-loader').length > 0) {
+			document.getElementById('ftco-loader').classList.remove('show');
+		}
+	}, 1);
+};
+loader();
 // ______________________________
 
 
@@ -45,45 +88,9 @@ function search_article() {
 		else { 
 			articles[i].style.display="inline-block";				 
 		}
-		if (input == "") {
+		if (input === "") {
 			articles[i].style.display="inline-block";
 		}
 	}
 }
 // ______________________________
-
-
-(function($) {
-
-	// handle click outside loaded sidebar
-	// ______________________________
-	let mobileMenuOutsideClick = function() {
-
-		$(document).click(function (e) {
-		let container = $("#site-aside, .js-site-nav-toggle");
-		if (!container.is(e.target) && container.has(e.target).length === 0) {
-
-			if ( $('body').hasClass('offcanvas') ) {
-
-				$('body').removeClass('offcanvas');
-				$('.js-site-nav-toggle').removeClass('active');
-			
-			}
-			
-		}
-		});
-
-		$(window).scroll(function(){
-			if ( $('body').hasClass('offcanvas') ) {
-
-				$('body').removeClass('offcanvas');
-				$('.js-site-nav-toggle').removeClass('active');
-			
-			}
-		});
-
-	};
-	mobileMenuOutsideClick();
-	// ______________________________
-
-})(jQuery);

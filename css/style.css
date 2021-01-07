@@ -710,7 +710,7 @@ h1, h2, h3, h4, h5,
 	display: block;
 	position: relative;
 	width: 100%;
-	background-image: url(../images/bg_1.jpg);
+	background-image: url(../images/subs_wrap.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	z-index: 0;
@@ -925,7 +925,7 @@ h1, h2, h3, h4, h5,
 
 .hero-wrap .hero-image {
 	width: 50%;
-	background-image: url(../images/veritylogo2.jpg);
+	background-image: url(../images/hero_logo.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
