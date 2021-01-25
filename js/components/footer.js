@@ -14,7 +14,7 @@ const SiteFooter = () => {
 							React.createElement('span', {className: 'icon-instagram icon-size'}))),
 					React.createElement('p', null, 'Website by ',
 						React.createElement('span', {className: 'designer-link'},
-							React.createElement('a', {href: 'https://instagram.com/karnavpopat', target: '_blank'}, 'Karnav Popat')),
+							React.createElement('a', {href: 'https://karnavpopat.netlify.app', target: '_blank'}, 'Karnav Popat')),
 						React.createElement('br', null),
 						'Copyright &copy; 2021 | Verity Today')))))
 }
