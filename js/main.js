@@ -77,7 +77,7 @@ loader();
 
 // search for an article
 // ______________________________
-function search_article() { 
+let search_article = function() { 
 	let input = document.getElementById('searchbar').value.toLowerCase();
 	let articles = document.getElementsByClassName('searchable');
 	
@@ -94,3 +94,84 @@ function search_article() {
 	}
 }
 // ______________________________
+
+let set_like_status = function() {
+
+	if (!localStorage.getItem('liked')) {
+		localStorage.setItem('liked', '0');
+	}
+	if (localStorage.getItem('liked') === '0') {
+		localStorage.setItem('liked', '1');
+		add_like_count();
+		console.log('liked, ', localStorage.getItem('liked'));
+	}
+	else {
+		localStorage.setItem('liked', '0');
+		minus_like_count();
+		console.log('unliked, ', localStorage.getItem('liked'));
+	}
+}
+
+let set_like_button_style = function() {
+	if (localStorage.getItem('liked') === '1') {
+		document.querySelector('#like_button').classList.add('like_toggled');
+	}
+
+	if (localStorage.getItem('liked') === '0') {
+		document.querySelector('#like_button').classList.remove('like_toggled');
+	}
+}
+set_like_button_style();
+
+let add_like_count = function() {
+	
+	// increment the number of likes by one
+	fetch('js/increment_like_api.php', {
+		method: 'POST',
+		body: localStorage.getItem('liked')
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log('Success:', data);
+	})
+	.catch((error) => {
+		;
+	});
+}
+
+let minus_like_count = function() {
+	
+	// decrement the number of likes by one
+	fetch('js/decrement_like_api.php', {
+		method: 'POST',
+		body: localStorage.getItem('liked')
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log('Success:', data);
+	})
+	.catch((error) => {
+		;
+	});
+}
+
+let inject_like_count = function(count) {
+	document.querySelector('#like_count').innerHTML = count;
+}
+let get_like_count = function() {
+
+	// fetch the current number of likes
+	fetch('js/get_like_api.php')
+	.then(response => response.json())
+	.then(data => inject_like_count(data));
+}
+get_like_count();
+
+let toggle_like = function() {
+
+	set_like_status();
+
+	set_like_button_style();
+
+	setInterval(get_like_count, 500);
+}
