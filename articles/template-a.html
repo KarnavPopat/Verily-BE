@@ -256,14 +256,26 @@
 <!-- Javascript Imports -->
 <script type="text/javascript">
 	// display progress towards end of article
-	function scrollProgress() {
-		var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-		var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-		var scrolled = (winScroll / height) * 100;
-		document.getElementById("progress").style.width = scrolled + "%";
+	function article_progress() {
+		let article = document.querySelector('.article-body');
+		let progress = document.querySelector('.progress-bar');
+
+		let total_length = article.clientHeight;
+		let scrolled_length = article.getBoundingClientRect().top;
+		let offset = total_length+scrolled_length;
+
+		// 253 is the height of the article header
+		if ((offset <= total_length + 253) && offset > 0) {
+			let update_value = (((total_length+253) - offset)/total_length * 100);
+			progress.style.display = 'block';
+			progress.style.width = update_value + '%';
+		}
+		else {
+			progress.style.display = 'none';
+		}
 	}
-	window.onscroll = function() {
-		scrollProgress()
+	document.onscroll = function() {
+		article_progress();
 	};
 </script>
 

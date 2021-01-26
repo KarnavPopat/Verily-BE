@@ -1,5 +1,5 @@
 const SiteFooter = () => {
-	return React.createElement('footer', {className: "site-footer"},
+	return React.createElement('footer', {className: "site-footer mt-3"},
 		React.createElement('div', {className: "container"},
 			React.createElement('div', {className: "row"},
 				React.createElement('div', {className: "col-md-6"},
@@ -16,7 +16,7 @@ const SiteFooter = () => {
 						React.createElement('span', {className: 'designer-link'},
 							React.createElement('a', {href: 'https://karnavpopat.netlify.app', target: '_blank'}, 'Karnav Popat')),
 						React.createElement('br', null),
-						'Copyright &copy; 2021 | Verity Today')))))
+						'Copyright \&copy; 2021 | Verity Today')))))
 }
 
 ReactDOM.render(SiteFooter(), document.querySelector('#footer-target'));

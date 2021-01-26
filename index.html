@@ -39,6 +39,7 @@
 			<div id="site-main">
 
 				<!-- landing page -->
+				<div class="parallax">
 				<section class="site-blocks-cover" style="background-image: url('images/index_hero.webp');">
 					<div class="overlay">
 
@@ -56,33 +57,13 @@
 
 					</div>
 		  		</section>
+		  		</div>
 
-				<!-- subscribe section -->
-				<section class="section">
-					<div class="row no-gutters align-items-center">
-						<div class="sidebar-box">
-							<div class="subs-wrap px-4 py-5">
-								<div class="overlay"></div>
-
-								<!-- subscribe prompt -->
-								<h3 class="mb-3 sidebar-heading">Newsletter</h3>
-								<p class="mb-3 sidebar-text">Subscribe to get regular updates on our publications, activities and more!</p>
-
-								<!-- subscribe form -->
-								<form name="subscriber" action="#" data-netlify="true" class="subscriber-form">
-									<div class="form-group">
-										<input type="text" name="target-mail" class="form-control" placeholder="Email Address">
-										<input type="submit" value="Subscribe" class="mt-2 btn btn-white submit">
-									</div>
-								</form>
-
-							</div>
-						</div>
-					</div>
-				</section>
+		  		<!-- subscribe section -->
+				<div class="subscribe-target"></div>
 
 				<input type="button" class="btn btn-white submit" id="like_button" value="Like" onclick="toggle_like()">
-				<span id="like_count">0</span>
+				<span id="like_count" class="btn btn-white">0</span>
 
 				<!-- footer -->
 				<footer id="footer-target"></footer>
@@ -110,6 +91,7 @@
 		<!-- reusable components -->
 		<script src="js/components/aside.js"></script>
 		<script src="js/components/footer.js"></script>
+		<script src="js/components/subscriber.js"></script>
 
 	</body>
 
