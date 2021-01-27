@@ -1,6 +1,5 @@
 const SiteAside = () => {
-	return React.createElement('aside', {id: 'site-aside', role: 'complementary', className: "js-fullheight" +
-			" text-center"},
+	return React.createElement('aside', {id: 'site-aside', role: 'complementary', className: "js-fullheight"},
 		React.createElement('a', {href: '/index'},
 			React.createElement('img', {src: 'images/veritylogo.jpg', alt: 'Verily', className: "mb-2", id: 'site-logo'})),
 				React.createElement('nav', {id: 'site-main-menu', role: 'navigation'},
