@@ -7,7 +7,8 @@
 :root {
 	--primary-accent: #bf9b30;
 	--secondary-accent: #deb12a;
-	--element-background: #dddddd;
+	--secondary-background: /*#101010*/#18181e;
+	--tag-background: #dddddd;
 }
 
 html {
@@ -193,7 +194,7 @@ body {
 
 /* Page Headers */
 .header {
-	background: #18181e;
+	background: var(--secondary-background);
 }
 
 .bread .breadcrumbs {
@@ -234,10 +235,10 @@ body {
 }
 
 body {
-	background-color: #222222;
+	background-color: #101010;
 	font-family: "Montserrat", Arial, sans-serif;
 	font-size: 15px;
-	color: #aaaaaa;
+	color: #e6e6e6;
 	font-weight: 500;
 	line-height: 1.8;
 }
@@ -434,10 +435,11 @@ h1, h2, h3, h4, h5,
 	cursor: pointer;
 	text-decoration: none;
 	position: fixed;
-	left: 12px;
-	top: 12px;
+	left: 0px;
+	top: 0px;
 	z-index: 9999;
 	opacity: 1;
+	padding: 20px;
 	visibility: visible;
 
 	-moz-transition: all 0.5s ease;
@@ -588,7 +590,7 @@ h1, h2, h3, h4, h5,
 #site-aside #site-logo a {
 	display: inline-block;
 	text-align: center;
-	color: var(--element-background);
+	color: var(--tag-background);
 }
 
 #site-aside #site-main-menu ul {
@@ -605,7 +607,7 @@ h1, h2, h3, h4, h5,
 }
 
 #site-aside #site-main-menu ul li a {
-	color: var(--element-background);
+	color: var(--tag-background);
 	text-decoration: none;
 	position: relative;
 	padding: 10px 0;
@@ -660,7 +662,7 @@ h1, h2, h3, h4, h5,
 	padding: 0 20px;
 	font-size: 14px;
 	font-weight: 400;
-	color: var(--element-background);
+	color: var(--tag-background);
 }
 
 #site-aside .side-footer h3 {
@@ -670,7 +672,7 @@ h1, h2, h3, h4, h5,
 }
 
 #site-aside .side-footer a {
-	color: var(--element-background);
+	color: var(--tag-background);
 }
 
 #site-aside .side-footer span {
@@ -693,7 +695,7 @@ h1, h2, h3, h4, h5,
 #site-aside .side-footer ul li a {
 	width: 40px;
 	height: 40px;
-	color: var(--element-background);
+	color: var(--tag-background);
 	padding: 4px;
 	font-size: 18px;
 	-webkit-border-radius: 50%;
@@ -827,7 +829,7 @@ h1, h2, h3, h4, h5,
 .site-footer {
 	position: relative;
 	padding: 2em 20px;
-	background-color: rgba(20, 20, 20, 1);
+	background-color: var(--secondary-background);
 	color: rgba(205, 205, 205, 0.5);
 }
 
@@ -859,10 +861,6 @@ h1, h2, h3, h4, h5,
 
 /* Landing Page
 ----------------------------------------------------*/
-
-.parallax {
-	
-}
 
 .site-blocks-cover {
 	height: 100vh;
@@ -1004,34 +1002,138 @@ h1, h2, h3, h4, h5,
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	justify-content: center;
+	align-items: center;
 }
 
 #global {
 	background-image: url(../images/image1.webp);
 }
+#global:hover {
+	background-image: linear-gradient(black, black), url(../images/image1.webp);
+	background-blend-mode: saturation;
+}
 #biz {
 	background-image: url(../images/image2.webp);
+}
+#biz:hover {
+	background-image: linear-gradient(black, black), url(../images/image2.webp);
+	background-blend-mode: saturation;
 }
 #entertainment {
 	background-image: url(../images/image3.webp);
 }
+#entertainment:hover {
+	background-image: linear-gradient(black, black), url(../images/image3.webp);
+	background-blend-mode: saturation;
+}
 #creativity {
 	background-image: url(../images/image4.webp);
+}
+#creativity:hover {
+	background-image: linear-gradient(black, black), url(../images/image4.webp);
+	background-blend-mode: saturation;
 }
 #mental {
 	background-image: url(../images/image5.webp);
 }
+#mental:hover {
+	background-image: linear-gradient(black, black), url(../images/image5.webp);
+	background-blend-mode: saturation;
+}
 #sports {
 	background-image: url(../images/image6.webp);
+}
+#sports:hover {
+	background-image: linear-gradient(black, black), url(../images/image6.webp);
+	background-blend-mode: saturation;
 }
 #social {
 	background-image: url(../images/image7.webp);
 }
+#social:hover {
+	background-image: linear-gradient(black, black), url(../images/image7.webp);
+	background-blend-mode: saturation;
+}
 #education {
 	background-image: url(../images/image8.webp);
 }
+#education:hover {
+	background-image: linear-gradient(black, black), url(../images/image8.webp);
+	background-blend-mode: saturation;
+}
 #tech {
 	background-image: url(../images/image9.webp);
+}
+#tech:hover {
+	background-image: linear-gradient(black, black), url(../images/image9.webp);
+	background-blend-mode: saturation;
+}
+
+@media (max-width: 768px) {
+	#global {
+		background-image: linear-gradient(black, black), url(../images/image1.webp);
+		background-blend-mode: saturation;
+	}
+	#global:hover {
+		background-image: url(../images/image1.webp);
+	}
+	#biz {
+		background-image: linear-gradient(black, black), url(../images/image2.webp);
+		background-blend-mode: saturation;
+	}
+	#biz:hover {
+		background-image: url(../images/image2.webp);
+	}
+	#entertainment {
+		background-image: linear-gradient(black, black), url(../images/image3.webp);
+		background-blend-mode: saturation;
+	}
+	#entertainment:hover {
+		background-image: url(../images/image3.webp);
+	}
+	#creativity {
+		background-image: linear-gradient(black, black), url(../images/image4.webp);
+		background-blend-mode: saturation;
+	}
+	#creativity:hover {
+		background-image: url(../images/image4.webp);
+	}
+	#mental {
+		background-image: linear-gradient(black, black), url(../images/image5.webp);
+		background-blend-mode: saturation;
+	}
+	#mental:hover {
+		background-image: url(../images/image5.webp);
+	}
+	#sports {
+		background-image: linear-gradient(black, black), url(../images/image6.webp);
+		background-blend-mode: saturation;
+	}
+	#sports:hover {
+		background-image: url(../images/image6.webp);
+	}
+	#social {
+		background-image: linear-gradient(black, black), url(../images/image7.webp);
+		background-blend-mode: saturation;
+	}
+	#social:hover {
+		background-image: url(../images/image7.webp);
+	}
+	#education {
+		background-image: linear-gradient(black, black), url(../images/image8.webp);
+		background-blend-mode: saturation;
+	}
+	#education:hover {
+		background-image: url(../images/image8.webp);
+	}
+	#tech {
+		background-image: linear-gradient(black, black), url(../images/image9.webp);
+		background-blend-mode: saturation;
+	}
+	#tech:hover {
+		background-image: url(../images/image9.webp);
+	}
 }
 
 .grid-entry .overlay {
@@ -1051,12 +1153,13 @@ h1, h2, h3, h4, h5,
 }
 @media (max-width: 768px) {
 	.grid-entry .overlay {
-		opacity: 0.7;
+		opacity: 0.6;
 	}
 }
 
 .grid-entry .text {
 	opacity: 0;
+	text-align: center;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
@@ -1078,7 +1181,7 @@ h1, h2, h3, h4, h5,
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.9);
 }
 
 .grid-entry:hover .overlay, .grid-entry:focus .overlay {
@@ -1086,6 +1189,15 @@ h1, h2, h3, h4, h5,
 }
 .grid-entry:hover .text, .grid-entry:focus .text {
 	opacity: 1;
+}
+
+@media (max-width: 768px) {
+	.grid-entry:hover .overlay, .grid-entry:focus .overlay {
+		opacity: 0;
+	}
+	.grid-entry:hover .text, .grid-entry:focus .text {
+		opacity: 0;
+	}
 }
 
 /*-------------------------------------------------*/
@@ -1107,6 +1219,10 @@ h1, h2, h3, h4, h5,
 
 .team .avatar1 {
 	background-image: url(../images/avatar1.webp);
+}
+.team .avatar1.lazy {
+	background-image: none;
+	background-color: #f1f1fa;
 }
 .team .avatar2 {
 	background-image: url(../images/avatar2.webp);

@@ -1,35 +1,49 @@
 
 "use strict";
 
-// Handle click on the sidebar toggle
+// handle click on the sidebar toggle
 // ______________________________
-let burgerMenu = function() {
+let burger_menu = function() {
 	document.querySelector('.site-nav-toggle').addEventListener('click', function(event) {
 		event.preventDefault();
 
 		if (document.querySelector('body').classList.contains('offcanvas')) {
-			document.querySelector('.site-nav-toggle').classList.remove('active');
+			this.classList.remove('active');
 			document.querySelector('body').classList.remove('offcanvas');
 		}
 		else {
-			document.querySelector('.site-nav-toggle').classList.add('active');
+			this.classList.add('active');
 			document.querySelector('body').classList.add('offcanvas');
 		}
 	});	
 };
-burgerMenu();
+burger_menu();
 
 // ______________________________
 
 // handle click outside loaded sidebar
 // ______________________________
 let targetCheck = true;
-let test = function() {
+
+let contains_element = function(element, event) {
+	if(element === event.target) {
+		targetCheck = false;
+	}
+	else {
+		if(element.children.length !== 0) {
+			for(let i = 0; i < element.children.length; i++) {
+				contains_element(element.children[i], event);
+			}
+		}
+	}
+}
+
+let handle_sidebar = function() {
 
 	document.addEventListener('click', function(event) {
 		let container = document.querySelectorAll(".site-nav-toggle, #site-aside");
 		targetCheck = true;
-		containsElement(container[1]);
+		contains_element(container[1], event);
 		if((container[0] !== (event.target) && container[1] !== (event.target)) && (targetCheck)) {
 			if(document.querySelector('body').classList.contains('offcanvas')) {
 				document.querySelector('body').classList.remove('offcanvas')
@@ -45,20 +59,7 @@ let test = function() {
 		}
 	});
 };
-test();
-
-let containsElement = function(element) {
-	if(element === event.target) {
-		targetCheck = false;
-	}
-	else {
-		if(element.children.length !== 0) {
-			for(let i = 0; i < element.children.length; i++) {
-				containsElement(element.children[i]);
-			}
-		}
-	}
-}
+handle_sidebar();
 // ______________________________
 
 
@@ -74,6 +75,66 @@ const loader = function() {
 loader();
 // ______________________________
 
+// lazy load images
+// ______________________________
+let handle_lazy_load = function() {
+	document.addEventListener("DOMContentLoaded", function() {
+		let lazyloadImages;		
+
+		if ("IntersectionObserver" in window) {
+			lazyloadImages = document.querySelectorAll(".lazy");
+			var imageObserver = new IntersectionObserver(function(entries, observer) {
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						let image = entry.target;
+						image.classList.remove("lazy");
+						imageObserver.unobserve(image);
+						console.log('2');
+					}
+				});
+			});
+
+			lazyloadImages.forEach(function(image) {
+				imageObserver.observe(image);
+			});
+		}
+
+		else {	
+			let lazyloadThrottleTimeout;
+			lazyloadImages = document.querySelectorAll(".lazy");
+			
+			function lazyload() {
+				if(lazyloadThrottleTimeout) {
+					clearTimeout(lazyloadThrottleTimeout);
+				}		
+
+				lazyloadThrottleTimeout = setTimeout(function() {
+					let scrollTop = window.pageYOffset;
+
+					lazyloadImages.forEach(function(img) {
+						if(img.offsetTop < (window.innerHeight + scrollTop)) {
+							img.src = img.dataset.src;
+							img.classList.remove('lazy');
+						}
+					});
+
+					if(lazyloadImages.length == 0) { 
+						document.removeEventListener("scroll", lazyload);
+						window.removeEventListener("resize", lazyload);
+						window.removeEventListener("orientationChange", lazyload);
+						console.log('1');
+					}
+				}, 20);
+			}
+
+			document.addEventListener("scroll", lazyload);
+			window.addEventListener("resize", lazyload);
+			window.addEventListener("orientationChange", lazyload);
+		}
+	});
+};
+handle_lazy_load();
+// ______________________________
 
 // search for an article
 // ______________________________
