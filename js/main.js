@@ -83,13 +83,12 @@ let handle_lazy_load = function() {
 
 		if ("IntersectionObserver" in window) {
 			lazyloadImages = document.querySelectorAll(".lazy");
-			var imageObserver = new IntersectionObserver(function(entries, observer) {
+			let imageObserver = new IntersectionObserver(function(entries, observer) {
 				entries.forEach(function(entry) {
 					if (entry.isIntersecting) {
 						let image = entry.target;
 						image.classList.remove("lazy");
 						imageObserver.unobserve(image);
-						console.log('2');
 					}
 				});
 			});
@@ -122,7 +121,6 @@ let handle_lazy_load = function() {
 						document.removeEventListener("scroll", lazyload);
 						window.removeEventListener("resize", lazyload);
 						window.removeEventListener("orientationChange", lazyload);
-						console.log('1');
 					}
 				}, 20);
 			}
