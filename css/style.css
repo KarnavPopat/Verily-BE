@@ -366,7 +366,7 @@ ____________________________________________________________-*/
 	-webkit-transition: opacity .2s ease-out, visibility 0s linear .2s;
 	-o-transition: opacity .2s ease-out, visibility 0s linear .2s;
 	transition: opacity .2s ease-out, visibility 0s linear .2s;
-	z-index: 999;
+	z-index: 998;
 }
 
 #ftco-loader.fullscreen {
@@ -909,6 +909,7 @@ ___________________________________________________-*/
 	position: relative;
 	width: 100%;
 	height: 100%;
+	z-index: 2;
 }
 .site-blocks-cover .overlay:before {
 	position: absolute;
@@ -1674,6 +1675,88 @@ ___________________________________________________*/
 	left: 0px;
 }
 
+.ik-folder,
+.ik-folder::after {
+	display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    width: 18px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 3px;
+}
+.ik-folder::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    border-bottom: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    top: -5px;
+}
+
+.ik-calendar,
+.ik-calendar::before {
+    display: inline-block;
+    box-sizing: border-box;
+}
+.ik-calendar {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-top: 4px solid rgba(255, 255, 255, 1);
+    border-radius: 3px;
+}
+.ik-calendar::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    border-radius: 3px;
+    left: 2px;
+    background: rgba(255, 255, 255, 1);
+    height: 2px;
+    top: 2px;
+}
+
+.ik-arrow-right-o {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 0 solid;
+    border-radius: 20px;
+}
+.ik-arrow-right-o::after,
+.ik-arrow-right-o::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 4px;
+}
+.ik-arrow-right-o::after {
+    width: 6px;
+    height: 6px;
+    border-top: 4px solid rgba(255, 255, 255, 1);
+    border-right: 4px solid rgba(255, 255, 255, 1);
+    transform: rotate(45deg);
+    bottom: 6px;
+}
+.ik-arrow-right-o::before {
+    width: 10px;
+    height: 4px;
+    bottom: 7px;
+    right: 6px;
+    background: rgba(255, 255, 255, 1);
+}
+
+/*_________________________________________________*/
+
 #like_button {
 	
 }
@@ -1787,3 +1870,202 @@ ___________________________________________________*/
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
 	background-color: #dde0e3;
 }
+
+/* temp inclusion of cool codepen demo of forms with placeholder labels - might help with accessibility */
+/*body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 40px;
+  width: 400px;
+}
+
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: inset 0px 0px 0px 0px transparent;
+}
+
+.input:focus {
+  box-shadow: inset 0px 0px 0px 2px #dc2f55;
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+  transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+  box-shadow: inset 0px 0px 0px 0px transparent;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+.submit:hover {
+  background-color: #06b;
+  box-shadow: inset 0px 0px 0px 2px #ffffff;
+}
+
+.submit:focus {
+  background-color: #06b;
+  box-shadow: inset 0px 0px 0px 2px #ffffff;
+}
+
+
+::-webkit-input-placeholder {
+  color: #65657b;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+:-ms-input-placeholder
+  color: #65657b;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+::placeholder {
+  color: #65657b;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+input:focus::placeholder {
+  opacity: 1;
+}*/
+/* html structure for this
+
+    <form class="form">
+      <h2 class="title">Welcome</h2>
+      <p class="subtitle">Let's create your account!</p>
+      <div class="input-container ic1">
+        <input id="firstname" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="firstname" class="placeholder">First name</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="lastname" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="lastname" class="placeholder">Last name</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="email" class="input" type="text" placeholder="email@example.com" />
+        <div class="cut cut-short"></div>
+        <label for="email" class="placeholder">Email</>
+      </div>
+      <button type="text" class="submit">Submit</button>
+    </form>
+*/
