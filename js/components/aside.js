@@ -22,10 +22,10 @@ const SiteAside = () => {
 					React.createElement('ul', {className: 'd-flex align-items-center'},
 						React.createElement('li', {className: 'd-flex align-items-center justify-content-center'},
 							React.createElement('a', {href: 'mailto: karnavpopat@gmail.com'},
-								React.createElement('i', {className: 'icon-envelope'}))),
+								React.createElement('i', {className: 'ik-mail'}))),
 						React.createElement('li', {className: 'd-flex align-items-center justify-content-center'},
 							React.createElement('a', {href: 'https://instagram.com/karnavpopat/'},
-								React.createElement('i', {className: 'icon-instagram'})))))))
+								React.createElement('i', {className: 'ik-instagram'})))))))
 }
 
 ReactDOM.render(SiteAside(), document.querySelector('#site-aside-target'));

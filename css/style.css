@@ -1722,7 +1722,7 @@ ___________________________________________________*/
     top: 2px;
 }
 
-.ik-arrow-right-o {
+.ik-arrow-right {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -1731,15 +1731,15 @@ ___________________________________________________*/
     border: 0 solid;
     border-radius: 20px;
 }
-.ik-arrow-right-o::after,
-.ik-arrow-right-o::before {
+.ik-arrow-right::after,
+.ik-arrow-right::before {
     content: "";
     display: inline-block;
     box-sizing: border-box;
     position: absolute;
     right: 4px;
 }
-.ik-arrow-right-o::after {
+.ik-arrow-right::after {
     width: 6px;
     height: 6px;
     border-top: 4px solid rgba(255, 255, 255, 1);
@@ -1747,7 +1747,7 @@ ___________________________________________________*/
     transform: rotate(45deg);
     bottom: 6px;
 }
-.ik-arrow-right-o::before {
+.ik-arrow-right::before {
     width: 10px;
     height: 4px;
     bottom: 7px;
