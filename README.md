@@ -8,3 +8,4 @@ Todo: 	Get dominant colours of images to lazy load
 	create a react component, with props or hooks, for the page headers
 	fix images in sidebar and author blurb
 	implement a templating system
+	figure out a way to incorporate those flashy curve section dividers
