@@ -137,25 +137,36 @@ body {
 
 /* Buttons */
 .btn {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
 	-webkit-border-radius: 30px;
 	border-radius: 30px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	min-width: 2.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}	
 }
 .btn:hover, .btn:active, .btn:focus {
 	outline: none;
-}
-
-.btn.btn-primary {
-	background: #f67e7d;
-	border: 1px solid #f67e7d;
-	color: rgba(255, 255, 255, 1);
-}
-.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
-	border: 1px solid var(--primary-accent);
-	background: transparent;
-	color: var(--primary-accent);
 }
 
 .btn.btn-white {
@@ -1033,12 +1044,20 @@ h1, h2, h3, h4, h5,
 	background-image: linear-gradient(black, black), url(../images/image1.webp);
 	background-blend-mode: saturation;
 }
+#global.lazy {
+	background-image: none;
+	background-color: #101010;
+}
 #biz {
 	background-image: url(../images/image2.webp);
 }
 #biz:hover {
 	background-image: linear-gradient(black, black), url(../images/image2.webp);
 	background-blend-mode: saturation;
+}
+#biz.lazy {
+	background-image: none;
+	background-color: #101010;
 }
 #entertainment {
 	background-image: url(../images/image3.webp);
@@ -1047,12 +1066,20 @@ h1, h2, h3, h4, h5,
 	background-image: linear-gradient(black, black), url(../images/image3.webp);
 	background-blend-mode: saturation;
 }
+#entertainment.lazy {
+	background-image: none;
+	background-color: #101010;
+}
 #creativity {
 	background-image: url(../images/image4.webp);
 }
 #creativity:hover {
 	background-image: linear-gradient(black, black), url(../images/image4.webp);
 	background-blend-mode: saturation;
+}
+#creativity.lazy {
+	background-image: none;
+	background-color: #101010;
 }
 #mental {
 	background-image: url(../images/image5.webp);
@@ -1061,12 +1088,20 @@ h1, h2, h3, h4, h5,
 	background-image: linear-gradient(black, black), url(../images/image5.webp);
 	background-blend-mode: saturation;
 }
+#mental.lazy {
+	background-image: none;
+	background-color: #101010;
+}
 #sports {
 	background-image: url(../images/image6.webp);
 }
 #sports:hover {
 	background-image: linear-gradient(black, black), url(../images/image6.webp);
 	background-blend-mode: saturation;
+}
+#sports.lazy {
+	background-image: none;
+	background-color: #101010;
 }
 #social {
 	background-image: url(../images/image7.webp);
@@ -1075,6 +1110,10 @@ h1, h2, h3, h4, h5,
 	background-image: linear-gradient(black, black), url(../images/image7.webp);
 	background-blend-mode: saturation;
 }
+#social.lazy {
+	background-image: none;
+	background-color: #101010;
+}
 #education {
 	background-image: url(../images/image8.webp);
 }
@@ -1082,12 +1121,20 @@ h1, h2, h3, h4, h5,
 	background-image: linear-gradient(black, black), url(../images/image8.webp);
 	background-blend-mode: saturation;
 }
+#education.lazy {
+	background-image: none;
+	background-color: #101010;
+}
 #tech {
 	background-image: url(../images/image9.webp);
 }
 #tech:hover {
 	background-image: linear-gradient(black, black), url(../images/image9.webp);
 	background-blend-mode: saturation;
+}
+#tech.lazy {
+	background-image: none;
+	background-color: #101010;
 }
 
 @media (max-width: 768px) {
@@ -1242,63 +1289,63 @@ h1, h2, h3, h4, h5,
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar2 {
 	background-image: url(../images/avatar2.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar3 {
 	background-image: url(../images/avatar3.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar4 {
 	background-image: url(../images/avatar4.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar5 {
 	background-image: url(../images/avatar5.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar6 {
 	background-image: url(../images/avatar6.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar7 {
 	background-image: url(../images/avatar7.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar8 {
 	background-image: url(../images/avatar8.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 .team .avatar9 {
 	background-image: url(../images/avatar9.webp);
 }
 .team .avatar1.lazy {
 	background-image: none;
-	background-color: #f1f1fa;
+	background-color: #101010;
 }
 
 .team .team-details {
@@ -1533,6 +1580,10 @@ h1, h2, h3, h4, h5,
 }
 
 /*-------------------------------------------------*/
+
+#like_button {
+	
+}
 
 .like_toggled {
 	background-color: black !important;

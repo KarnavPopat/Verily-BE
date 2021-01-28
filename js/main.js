@@ -186,7 +186,7 @@ set_like_button_style();
 let add_like_count = function() {
 	
 	// increment the number of likes by one
-	fetch('js/increment_like_api.php', {
+	fetch('../php/increment_like_api.php', {
 		method: 'POST',
 		body: localStorage.getItem('liked')
 	})
@@ -202,7 +202,7 @@ let add_like_count = function() {
 let minus_like_count = function() {
 	
 	// decrement the number of likes by one
-	fetch('js/decrement_like_api.php', {
+	fetch('../php/decrement_like_api.php', {
 		method: 'POST',
 		body: localStorage.getItem('liked')
 	})
@@ -221,7 +221,7 @@ let inject_like_count = function(count) {
 let get_like_count = function() {
 
 	// fetch the current number of likes
-	fetch('js/get_like_api.php')
+	fetch('../php/get_like_api.php')
 	.then(response => response.json())
 	.then(data => inject_like_count(data));
 }
