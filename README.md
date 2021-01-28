@@ -9,3 +9,8 @@ Todo: 	Get dominant colours of images to lazy load
 	fix images in sidebar and author blurb
 	implement a templating system
 	figure out a way to incorporate those flashy curve section dividers
+	figure out how to parallax the particles.js effect
+	implement an exit-intent popup
+	implement a non-javascript version
+	implement a different loader (or remove it)
+	change the meta tags to improve SEO
