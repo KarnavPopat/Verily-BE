@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/icomoon.css">
 <link rel="stylesheet" href="../css/style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+
 </head>
 
 <body>
@@ -34,9 +36,9 @@
 <div class="row g-0 align-items-center">
 <div class="col-md-9">
 <p class="breadcrumbs">
-<span class="mr-2"><a href="../index">Home</a></span>  
-<span class="mr-2"><a href="../departments/{{department-code}}">{{department}}</a></span>  
-<span class="final-link">{{title}}</span>
+<a href="../index"><span class="mr-2">Home</span></a>  
+<a href="../departments/{{department-code}}"><span class="mr-2">{{department}}</span></a>
+<span>{{title}}</span>
 </p>
 <h1 class="mb-3 page-heading">{{title}}</h1>
 <p>{{authors}} &nbsp; &nbsp;|&nbsp;&nbsp; {{date}} &nbsp;&nbsp;|&nbsp;&nbsp; <span class="read-time">{{read-time}}</span></p>
@@ -49,19 +51,21 @@
 <div class="progress-bar" id="progress"></div>
 </div>
 
-<section class="section">
+<section class="section p-0">
 <div class="container">
 <div class="row">
 <div class="col-lg-8">
 <div class="article-body">
 
-<p id='para1'></p>
+<p id='para1'>Another Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something </p>
 
-<br><div>
+<br>
+<div class="article-body-image">
+<img src="../images/index_hero.webp" alt="article-image" class="img-fluid">
+<h6>{{image-credit}}</h6>
+</div>
 
-<img src="../images/image_1.jpg" alt="image" class="img-fluid"></div>
-
-<p id='para2'></p>
+<p id='para2'>Another Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something </p>
 
 <p id='para3'></p>
 
@@ -79,110 +83,41 @@
 
 <p id='para10'></p>
 
-<p id='para11'></p>
-
-<p id='para12'></p>
-
-<p id='para13'></p>
-
-<p id='para14'></p>
-
-<p id='para15'></p>
-
-<p id='para16'></p>
-
-<p id='para17'></p>
-
-<p id='para18'></p>
-
-<p id='para19'></p>
-
-<p id='para20'></p>
-
 </div>
 
 <div class="about-author d-flex mt-5 auth">
-
-<div class="col-md-3 mr-5">
-<img src="../images/avatar1.webp" alt="Author Image" class="img-fluid">
+<div class="col-md-3">
+<img src="../images/avatar2.webp" alt="Author Picture" class="img-fluid">
 </div>
-
 <div class="col-md-9">
-<h4>Author Name</h4>
-<p>Karnav Popat is a regular writer for Verity Today.</p>
+<h3>{{author-name}}</h3>
+<p>{{author-description}}</p>
 </div>
-
 </div>
 
 <div class="about-author d-flex auth2" style="display: none !important;">
-
-<div class="col-md-3 mr-5">
-<img src="../images/avatar2.webp" alt="Author Image" class="img-fluid mb-4">
+<div class="col-md-3">
+<img src="../images/avatar2.webp" alt="Author Picture" class="img-fluid">
 </div>
-
 <div class="col-md-9">
-<h4>Author Name2</h4>
-<p>Karnav Popat2 is a regular writer for Verity Today.</p>
+<h3>{{author-name}}</h3>
+<p>{{author-description}}</p>
 </div>
-
 </div>
 
 <div class="about-author d-flex auth3" style="display: none !important;">
-<div class="col-md-9 mr-5">
-<img src="../images/avatar3.webp" alt="Author Image" class="img-fluid mb-4">
+<div class="col-md-3">
+<img src="../images/avatar2.webp" alt="Author Picture" class="img-fluid">
 </div>
-
-<div class=" col-md-5">
-<h4>Author Name3</h4>
-<p>Karnav Popat3 is a regular writer for Verity Today.</p>
+<div class="col-md-9">
+<h3>{{author-name}}</h3>
+<p>{{author-description}}</p>
 </div>
-
 </div>
 
 </div>
 
 <div class="col-lg-4 sidebar mt-5">
-
-<div class="sidebar-box pt-5">
-<h3 class="sidebar-heading">Popular Articles</h3>
-
-<div class="popular d-flex mb-4">
-<img src="../images/avatar2.webp" alt="Author Image" class="img-fluid mr-4">
-<div>
-<a href="#" class="sidebar-text">Meaningless Money</a><br>
-<div class="details">
-<span><i class="icon-person"></i>&nbsp; Karnav Popat</span>
-<span><i class="icon-folder-o"></i>&nbsp; Entertainment</span>
-<span><i class="icon-calendar"></i>&nbsp; August 2020</span>
-</div>
-</div>
-</div>
-
-<div class="popular d-flex mb-4">
-<img src="../images/avatar2.webp" alt="Author Image" class="img-fluid mr-4">
-<div>
-<a href="#" class="sidebar-text">Meaningless Money</a><br>
-<div class="details">
-<span><i class="icon-person"></i>&nbsp; Karnav Popat</span>
-<span><i class="icon-folder-o"></i>&nbsp; Business & Eco</span>
-<span><i class="icon-calendar"></i>&nbsp; August 2020</span>
-</div>
-</div>
-</div>
-
-<div class="popular d-flex mb-4">
-<img src="../images/avatar2.webp" alt="Author Image" class="img-fluid mr-4">
-<div>
-<a href="#" class="sidebar-text">Meaningless Money</a><br>
-<div class="details">
-<span><i class="icon-person"></i>&nbsp; Karnav Popat</span>
-<span><i class="icon-folder-o"></i>&nbsp; Technology</span>
-<span><i class="icon-calendar"></i>&nbsp; August 2020</span>
-</div>
-</div>
-</div>
-
-</div>
 
 <div class="sidebar-box">
 <h3 class="sidebar-heading">Read More From</h3>

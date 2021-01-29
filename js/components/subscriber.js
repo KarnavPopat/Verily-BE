@@ -7,7 +7,7 @@ const SubscribeSection = () => {
 					React.createElement('h3', {className: "mb-3 sidebar-heading"}, 'Newsletter'),
 					React.createElement('p', {className: "mb-3 sidebar-text"}, 'Subscribe to get regular updates on our publications, activities and more!'),
 
-					React.createElement('form', {name: "subscriber", action: "#", className: "subscriber-form"},
+					React.createElement('form', {name: "subscriber", action: "#", autocomplete: "off", autcocorrect: "off", autocapitalize: "off", className: "subscriber-form"},
 						React.createElement('div', {className: "form-group"}, 
 							React.createElement('input', {type: "text", name: "target-mail", className: "form-control", placeholder: "Email Address"}),
 							React.createElement('input', {type: "submit", value: "Subscribe", className: "mt-2 btn btn-white submit"}

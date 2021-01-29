@@ -35,7 +35,7 @@ particlesJS('particles-js',
           "nb_sides": 5
         },
         "image": {
-          "src": "images/bg.jpg",
+          "src": "",
           "width": 100,
           "height": 100
         }
@@ -44,14 +44,14 @@ particlesJS('particles-js',
         "value": 0.5,
         "random": true,
         "anim": {
-          "enable": false,
+          "enable": true,
           "speed": 1,
           "opacity_min": 0.1,
           "sync": false
         }
       },
       "size": {
-        "value": 5,
+        "value": 6,
         "random": true,
         "anim": {
           "enable": true,
@@ -106,7 +106,7 @@ particlesJS('particles-js',
           "size": 40,
           "duration": 2,
           "opacity": 8,
-          "speed": 3
+          "speed": 4
         },
         "repulse": {
           "distance": 200
@@ -123,7 +123,7 @@ particlesJS('particles-js',
     "config_demo": {
       "hide_card": false,
       "background_color": "#b61924",
-      "background_image": "",
+      "background_image": "../images/index_hero.webp",
       "background_position": "50% 50%",
       "background_repeat": "no-repeat",
       "background_size": "cover"

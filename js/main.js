@@ -154,7 +154,6 @@ let search_article = function() {
 }
 // ______________________________
 
-
 let set_like_status = function() {
 
 	if (!localStorage.getItem('liked')) {

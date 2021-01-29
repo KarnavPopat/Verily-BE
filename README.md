@@ -19,5 +19,6 @@ Todo: 	Get dominant colours of images to lazy load
 	change the meta tags to improve SEO
 	add a search icon to the search bars
 	convert the js search to a proper php search
-	switch colour scheme to blue
 	implement dark mode
+	add a dropdown menu to the aside
+	correct meta data

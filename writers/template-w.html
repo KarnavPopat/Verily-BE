@@ -35,9 +35,10 @@
 
 <div class="row g-0 align-items-center">
 <p class="breadcrumbs mb-3">
-<span class="mr-2"><a href="../index">Home</a></span> 
-<span class="mr-2"><a href="../team">The Team</a></span>
-<span class="mr-2 final-link">Author</span></p>
+<a href="../index"><span class="mr-2">Home</span></a> 
+<a href="../team"><span class="mr-2">The Team</span></a>
+<span>{{author-name}}</span>
+</p>
 </div>
 
 <div class="mt-5 row g-0">
@@ -46,8 +47,8 @@
 </div>
 <div class="col-md-2"></div>
 <div class="col-md-6 writer-info">
-<h1 class="mb-3 page-heading">Author Name</h1>
-<p>Karnav Popat is a writer for Verity Today and for the Business & Eco, Technology, and Sports departments.</p>
+<h1 class="mb-3 page-heading">{{author-name}}</h1>
+<p>{{author-description}}</p>
 </div>
 </div>
 
@@ -84,33 +85,42 @@
 <div class="container">
 <div class="row">
 <div class="col-lg-12">
-<h2 class="section-heading m-3 mb-4">Read Author's Work</h2>
+<h2 class="section-heading m-3 mb-4">Read {{author-name}}'s Work</h2>
 <div class="row">
 
-<div class="col-md-6 col-lg-4 article searchable">
-<a href="../articles/" class="article-image" style="background-image: url(../images/index_hero.webp);"></a>
-<a href="../articles/"><span class="article-title">More Rise Than Fall</span></a>
-<p class="article-details">
-<i class="icon-calendar mr-5"></i><span class="mr-3">&nbsp; June 2020 &nbsp;</span>
-<i class="icon-folder-o mr-2"></i><span class="mr-0"><a href="../departments/tech">&nbsp; Technology</a></span>
+<div class="col-md-6 col-lg-4 writer-article searchable">
+<a href="../articles/" class="writer-article-image" style="background-image: url(../images/index_hero.webp);"></a>
+<a href="../articles/"><span class="writer-article-title">{{article-title}}</span></a>
+<p class="writer-article-details">
+<span class="ik-calendar pr-1"></span>
+<span class="mr-3">{{date}}</span>
+<span>&nbsp;</span>
+<span class="ik-folder pr-1"></span>
+<a href="../departments/tech"><span class="mr-0">{{department}}</span></a>
 </p>
 </div>
 
-<div class="col-md-6 col-lg-4 article searchable">
-<a href="../articles/" class="article-image" style="background-image: url(../images/index_hero.webp);"></a>
-<a href="../articles/"><span class="article-title">More Rise Than Fall</span></a>
-<p class="article-details">
-<i class="icon-calendar mr-5"></i><span class="mr-3">&nbsp; June 2020 &nbsp;</span>
-<i class="icon-folder-o mr-2"></i><span class="mr-0"><a href="../departments/tech">&nbsp; Technology</a></span>
+<div class="col-md-6 col-lg-4 writer-article searchable">
+<a href="../articles/" class="writer-article-image" style="background-image: url(../images/index_hero.webp);"></a>
+<a href="../articles/"><span class="writer-article-title">More Rise Than Fall</span></a>
+<p class="writer-article-details">
+<span class="ik-calendar pr-1"></span>
+<span class="mr-3">June 2020</span>
+<span>&nbsp;</span>
+<span class="ik-folder pr-1"></span>
+<a href="../departments/tech"><span class="mr-0">Technology</span></a>
 </p>
 </div>
 
-<div class="col-md-6 col-lg-4 article searchable">
-<a href="../articles/" class="article-image" style="background-image: url(../images/index_hero.webp);"></a>
-<a href="../articles/"><span class="article-title">More Rise Than Fall</span></a>
-<p class="article-details">
-<i class="icon-calendar mr-5"></i><span class="mr-3">&nbsp; June 2020 &nbsp;</span>
-<i class="icon-folder-o mr-2"></i><span class="mr-0"><a href="../departments/tech">&nbsp; Technology</a></span>
+<div class="col-md-6 col-lg-4 writer-article searchable">
+<a href="../articles/" class="writer-article-image" style="background-image: url(../images/index_hero.webp);"></a>
+<a href="../articles/"><span class="writer-article-title">More Rise Than Fall</span></a>
+<p class="writer-article-details">
+<span class="ik-calendar pr-1"></span>
+<span class="mr-3">June 2020</span>
+<span>&nbsp;</span>
+<span class="ik-folder pr-1"></span>
+<a href="../departments/tech"><span class="mr-0">Technology</span></a>
 </p>
 </div>
 
