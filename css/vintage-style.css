@@ -17,13 +17,8 @@ ________________________________________________*/
 	box-sizing: border-box;
 }
 
-@font-face {
-	font-family: "JetBrainsMono";
-	src: url("../fonts/JetBrainsMono-Thin.woff2") format('woff2');
-}
-
 html {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: sans-serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -82,8 +77,6 @@ body {
 	background-color: var(--secondary-background);
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-	font-family: "JetBrainsMono";
 
 	-webkit-animation: fadein 2s;
 	-moz-animation: fadein 2s;
@@ -250,13 +243,13 @@ ________________________________________________-*/
 }
 
 .bread .page-heading {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	font-weight: 700;
 }
 
 .read-time {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	font-weight: bold;
 }
@@ -269,7 +262,7 @@ ________________________________________________-*/
 
 body {
 	background-color: #101010;
-	font-family: "JetBrainsMono", sans-serif;
+	font-family: "Montserrat", Arial, sans-serif;
 	font-size: 15px;
 	color: #e6e6e6;
 	font-weight: 500;
@@ -320,7 +313,7 @@ h1, h2, h3, h4, h5,
 	line-height: 1.5;
 	color: var(--secondary-accent);
 	font-weight: 400;
-	font-family: "JetBrainsMono", sans-serif;
+	font-family: "Poppins", Arial, sans-serif;
 }
 
 .section {
@@ -339,7 +332,7 @@ h1, h2, h3, h4, h5,
 }
 
 .section-heading {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	font-weight: 600;
 }
@@ -649,7 +642,7 @@ ________________________________________________________________________-*/
 	text-decoration: none;
 	position: relative;
 	padding: 10px 0;
-	font-family: "JetBrainsMono", sans-serif;
+	font-family: "Montserrat", Arial, sans-serif;
 
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -874,7 +867,7 @@ ________________________________________________-*/
 .site-footer .footer-heading {
 	color: var(--secondary-accent);
 	font-weight: 500;
-	font-family: "JetBrainsMono", sans-serif;
+	font-family: "Montserrat", Arial, sans-serif;
 	font-size: 20px;
 }
 .site-footer a {
@@ -1002,7 +995,7 @@ ____________________________________________________*/
 }
 
 .hero-wrap .text h1 {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	letter-spacing: 1px;
 	font-weight: 900;
@@ -1247,7 +1240,7 @@ ________________________________________________-*/
 }
 
 .grid-entry .text h3 {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
 	color: var(--secondary-accent);
 }
@@ -1363,7 +1356,7 @@ ___________________________________________________*/
 
 .team .team-details h5 {
 	font-size: 1.25rem;
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	margin-bottom: 0;
 	color: var(--secondary-accent);
 }
@@ -1427,7 +1420,7 @@ ___________________________________________________*/
 }
 
 .about-author h4 {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 }
 
@@ -1461,7 +1454,7 @@ ___________________________________________________*/
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 2px;
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	margin-bottom: 20px;
 }
@@ -1575,7 +1568,7 @@ ___________________________________________________*/
 }
 
 .article-title {
-	font-family: 'JetBrainsMono', sans-serif;
+	font-family: 'PT Sans Caption', sans-serif;
 	color: var(--secondary-accent);
 	font-size: 18px;
 	font-weight: 700;
