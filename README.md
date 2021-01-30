@@ -1,8 +1,5 @@
 # Verily Base
 
-Todo immediate: fix icons
-		figure out why removing icomoon increases LCP
-
 Todo: 	Get dominant colours of images to lazy load
 	Implement CSS Grid
 	Switch to node.js for the backend
@@ -13,8 +10,6 @@ Todo: 	Get dominant colours of images to lazy load
 	implement an exit-intent popup
 	implement a non-javascript version
 	implement a different loader (or remove it)
-	change the meta tags to improve SEO
 	add a search icon to the search bars
 	convert the js search to a proper php search
 	add a dropdown menu to the aside
-	correct meta data

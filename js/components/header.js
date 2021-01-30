@@ -1,16 +1,15 @@
-import React from 'react'
-
-const PageHeader = () => {
-    return React.createElement('section', {className: "section header bread"},
-        React.createElement('div', {className: "container"},
-            React.createElement('div', {className: "row no-gutters align-items-center"},
-                React.createElement('div', {className: "col-md-9"},
-                    React.createElement('p', {className: "breadcrumbs"},
-                        React.createElement('span', {className: "mr-2"},
-                            React.createElement('a', {href: "/index"}, 'Home')),
-                        React.createElement('span', {className: "final-link"}, 'About')),
-                    React.createElement('h1', {className: "mb-3 page-heading"}, 'About Us'),
-                    React.createElement('p', null, 'Read about what makes us who we are')))))
+const PageHeader = (props) => {
+    return e('section', {className: 'section header bread'},  
+        e('div', {className: 'container'}, 
+            e('div', {className: 'row g-0 align-items-center'}, 
+                e('div', {className: 'col-md-9'}, 
+                    e('p', {className: 'breadcrumbs'}, 
+                        e('a', {href: '/index'}, 
+                            e('span', null, 'Home')), 
+                        e('span', null, `${props.pagebreadcrumb}` )), 
+                    e('h1', {className: 'mb-3 page-heading'}, `${props.pageheading}` ), 
+                    e('p', null, `${props.pagedescription}` )))))
 }
 
-export default PageHeader;
+ReactDOM.render(PageHeader({pagebreadcrumb: 'About', pageheading: 'About Us', pagedescription: 'Read about what makes us who we are.'}), 
+    document.querySelector('#header-target'));

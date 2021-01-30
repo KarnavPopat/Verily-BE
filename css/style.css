@@ -876,6 +876,7 @@ ________________________________________________*/
 }
 
 .bread .breadcrumbs {
+	display: inline-block;
 	text-transform: uppercase;
 	font-size: 13px;
 	letter-spacing: 1px;
@@ -885,6 +886,7 @@ ________________________________________________*/
 .bread .breadcrumbs a span {
 	color: var(--subdued-text);
 	border-bottom: 2px solid var(--subdued-text);
+	margin-right: 0.5rem;
 }
 .bread .breadcrumbs span {
 	color: var(--secondary-accent);
