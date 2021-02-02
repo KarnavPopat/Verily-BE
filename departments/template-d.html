@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <link rel="icon" href="images/veritylogo.jpg" type="image/jpg">
-<title>Verily</title>
+<title>Verily <%this.department%></title>
 <meta name="theme-color" content="#00a6d7">
 <meta charset="utf-8">
 <meta name="description" content="Verily is a blogging website by Karnav Popat, written with React and Node.">
@@ -35,9 +35,9 @@
 <p class="breadcrumbs">
 <a href="../index"><span>Home</span> </a> 
 <a href="../gateway"><span>Departments</span></a>  
-<span>{department}</span></p>
-<h1 class="mb-3 page-heading">{department}</h1>
-<p>{department-slogan}</p>
+<span><%this.department%></span></p>
+<h1 class="mb-3 page-heading"><%this.department%></h1>
+<p><%this.department%></p>
 </div>
 </div>
 </div>

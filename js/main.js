@@ -182,55 +182,9 @@ let set_like_button_style = function() {
 }
 set_like_button_style();
 
-let add_like_count = function() {
-	
-	// increment the number of likes by one
-	fetch('../php/increment_like_api.php', {
-		method: 'POST',
-		body: localStorage.getItem('liked')
-	})
-	.then(response => response.json())
-	.then(data => {
-		console.log('Success:', data);
-	})
-	.catch((error) => {
-		;
-	});
-}
-
-let minus_like_count = function() {
-	
-	// decrement the number of likes by one
-	fetch('../php/decrement_like_api.php', {
-		method: 'POST',
-		body: localStorage.getItem('liked')
-	})
-	.then(response => response.json())
-	.then(data => {
-		console.log('Success:', data);
-	})
-	.catch((error) => {
-		;
-	});
-}
-
-let inject_like_count = function(count) {
-	document.querySelector('#like_count').innerHTML = count;
-}
-let get_like_count = function() {
-
-	// fetch the current number of likes
-	fetch('../php/get_like_api.php')
-	.then(response => response.json())
-	.then(data => inject_like_count(data));
-}
-get_like_count();
-
 let toggle_like = function() {
 
 	set_like_status();
 
 	set_like_button_style();
-
-	setInterval(get_like_count, 500);
 }
