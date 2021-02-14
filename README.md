@@ -1,5 +1,7 @@
 # Verily Base
 
+A simple, unbloated blog site template built with Bootstrap and React.
+
 Todo: 	Get dominant colours of images to lazy load
 	Implement CSS Grid
 	Switch to node.js for the backend
