@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="images/veritylogo.jpg" type="image/jpg">
-<title>Verily</title>
+<link rel="icon" href="../images/veritylogo.jpg" type="image/jpg">
+<title>{{title}}</title>
 <meta name="theme-color" content="#00a6d7">
 <meta charset="utf-8">
 <meta name="description" content="Verily is a blogging website by Karnav Popat, written with React and Node.">
@@ -40,7 +40,7 @@
 <span>{{title}}</span>
 </p>
 <h1 class="mb-3 page-heading">{{title}}</h1>
-<p>{{authors}} &nbsp; &nbsp;|&nbsp;&nbsp; {{date}} &nbsp;&nbsp;|&nbsp;&nbsp; <span class="read-time">{{read-time}}</span></p>
+<p>{{comma-separated authors}} &nbsp; &nbsp;|&nbsp;&nbsp; {{date}} &nbsp;&nbsp;|&nbsp;&nbsp; <span class="read-time">{{read-time}}</span></p>
 </div>
 </div>
 </div>
@@ -56,37 +56,21 @@
 <div class="col-lg-8">
 <div class="article-body">
 
-<p id='para1'>Another Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something </p>
+<p>{{article-opening}}</p>
 
 <br>
 <div class="article-body-image">
-<img src="../images/index_hero.webp" alt="article-image" class="img-fluid">
+<img src="../{{image}}" alt="article image" class="img-fluid">
 <h6>{{image-credit}}</h6>
 </div>
 
-<p id='para2'>Another Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something Lorem ipsum dolor sit amet, something something something </p>
-
-<p id='para3'></p>
-
-<p id='para4'></p>
-
-<p id='para5'></p>
-
-<p id='para6'></p>
-
-<p id='para7'></p>
-
-<p id='para8'></p>
-
-<p id='para9'></p>
-
-<p id='para10'></p>
+<div>{{article-body}}</div>
 
 </div>
 
 <div class="about-author d-flex mt-5 auth">
 <div class="col-md-3">
-<img src="../images/avatar2.webp" alt="Author Picture" class="img-fluid">
+<img src="../{{author-image}}" alt="author picture" class="img-fluid">
 </div>
 <div class="col-md-9">
 <h3>{{author-name}}</h3>
@@ -161,10 +145,6 @@
 <li><a href="../gateway">October 2020 <span>(32)</span></a></li>
 </ul>
 </div>
-
-<div class="feedgrabbr_widget" id="fgid_1d3eee2e522d8166f9181b831"></div>
-<script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_1d3eee2e522d8166f9181b831");</script>
-<script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
 
 </div>
 

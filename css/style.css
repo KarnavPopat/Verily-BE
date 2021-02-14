@@ -524,7 +524,7 @@ ________________________________________________________________________-*/
 	right: 0;
 	overflow-y: hidden;
 	z-index: 2;
-	background: black;
+	background: var(--unshifting-black);
 	opacity: 100%;
 	text-align: center;
 
