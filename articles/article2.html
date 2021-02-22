@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="../images/veritylogo.jpg" type="image/jpg">
+<title>More Rise Than Fall</title>
+<meta name="theme-color" content="#00a6d7">
+<meta charset="utf-8">
+<meta name="description" content="Verily is a blogging website by Karnav Popat, written with React and Node.">
+<meta name="keywords" content="Verily, Karnav Popat, Verity Today, veritytoday">
+<meta name="author" content="Karnav Popat">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Stylesheet Imports -->
+<link rel="stylesheet" href="../css/bootstrap-grid.css">
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div id="site-page">
+<a href="#" class="site-nav-toggle"><i></i></a>
+<!-- aside navbar -->
+<aside id="site-aside-target"></aside>
+<!-- Main Page -->
+<div id="site-main">
+<section class="section header bread">
+<div class="container">
+<div class="row g-0 align-items-center">
+<div class="col-md-9">
+<p class="breadcrumbs">
+<a href="../index"><span>Home</span></a>  
+<a href="../departments/biz"><span>Biz & Eco</span></a>
+<span>More Rise Than Fall</span>
+</p>
+<h1 class="mb-3 page-heading">More Rise Than Fall</h1>
+<p>Karnav Popat &nbsp; &nbsp;|&nbsp;&nbsp; 1st June, 2020 &nbsp;&nbsp;|&nbsp;&nbsp; <span class="read-time">n minutes</span></p>
+</div>
+</div>
+</div>
+</section>
+<div class="progress-container">
+<div class="progress-bar" id="progress"></div>
+</div>
+<section class="section p-0">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="article-body">
+<p>Alorem ipsum dolor sit amet, per aspera ad astra</p>
+<br>
+<div class="article-body-image">
+<img src="../images/index_hero.webp" alt="article image" class="img-fluid">
+<h6>Taken from Unsplash &copy; Karnav Popat</h6>
+</div>
+<div>Lorem ipsum dolor sit amet, per aspera ad astra, quis custodie ipso custodes</div>
+</div>
+<div class="about-author d-flex mt-5 auth">
+<div class="col-md-3">
+<img src="../images/avatar2.webp" alt="author picture" class="img-fluid">
+</div>
+<div class="col-md-9">
+<h3>Karnav Popat</h3>
+<p>Karnav is the developer and maintainer of Verily</p>
+</div>
+</div>
+<div class="about-author d-flex auth2" style="display: none !important;">
+<div class="col-md-3">
+<img src="../{{author-2-image}}" alt="Author Picture" class="img-fluid">
+</div>
+<div class="col-md-9">
+<h3>{{author-2-name}}</h3>
+<p>{{author-2-description}}</p>
+</div>
+</div>
+<div class="about-author d-flex auth3" style="display: none !important;">
+<div class="col-md-3">
+<img src="../{{author-3-image}}" alt="Author Picture" class="img-fluid">
+</div>
+<div class="col-md-9">
+<h3>{{author-3-name}}</h3>
+<p>{{author-3-description}}</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 sidebar mt-5">
+<div class="sidebar-box">
+<h3 class="sidebar-heading">Read More From</h3>
+<ul class="tagcloud">
+<a href="../departments/biz">Business & Eco</a>
+<a href="../departments/creativity">Creativity</a>
+<a href="../departments/education">Education</a>
+<a href="../departments/entertainment">Entertainment</a>
+<a href="../departments/global">Global Affairs</a>
+<a href="../departments/mental">Mental Health</a>
+<a href="../departments/social">Social Change</a>
+<a href="../departments/sports">Sports</a>
+<a href="../departments/tech">Tech</a>
+</ul>
+</div>
+<div class="sidebar-box">
+<div class="subs-wrap px-4 py-5">
+<div class="overlay"></div>
+<!-- subscribe prompt -->
+<h3 class="mb-3 sidebar-heading">Newsletter</h3>
+<p class="mb-3 sidebar-text">Subscribe to get regular updates on our publications, activities and more!</p>
+<!-- subscribe form -->
+<form name="subscriber" action="#" data-netlify="true" class="subscriber-form">
+<div class="form-group">
+<input type="text" name="target-mail" class="form-control" placeholder="Email Address">
+<input type="submit" value="Subscribe" class="mt-2 btn btn-white submit">
+</div>
+</form>
+</div>
+</div>
+<div class="sidebar-box">
+<h3 class="sidebar-heading">Archives</h3>
+<ul class="categories">
+<li><a href="../gateway">July 2020 <span>(46)</span></a></li>
+<li><a href="../gateway">August 2020 <span>(60)</span></a></li>
+<li><a href="../gateway">September 2020 <span>(53)</span></a></li>
+<li><a href="../gateway">October 2020 <span>(32)</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- footer -->
+<footer id="footer-target"></footer>
+</div>
+</div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+<div class="spinner">
+<div class="dot1"></div>
+<div class="dot2"></div>
+</div>
+</div>
+<!-- Javascript Imports -->
+<script type="text/javascript">
+	// display progress towards end of article
+	function article_progress() {
+		let article = document.querySelector('.article-body');
+		let progress = document.querySelector('.progress-bar');
+		let total_length = article.clientHeight;
+		let scrolled_length = article.getBoundingClientRect().top;
+		let offset = total_length+scrolled_length;
+		// 253 is the height of the article header
+		if ((offset <= total_length + 253) && offset > 0) {
+			let update_value = (((total_length+253) - offset)/total_length * 100);
+			progress.style.display = 'block';
+			progress.style.width = update_value + '%';
+		}
+		else {
+			progress.style.display = 'none';
+		}
+	}
+	document.onscroll = function() {
+		article_progress();
+	};
+</script>
+<!-- Javascript Imports -->
+<script src="../js/main.js"></script>
+<!-- React Import -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<!-- reusable components -->
+<script src="../js/components/aside.js"></script>
+<script src="../js/components/footer.js"></script>
+</body>
+</html>
